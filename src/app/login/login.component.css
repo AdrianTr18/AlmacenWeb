@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Poppins:wght@100&display=swap');
+
+.Login {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background: url(/assets/Fondo_backus.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.Logo_container {
+    position: absolute;
+    width: 315px;
+    height: 115px;
+    left: 35%;
+    top: 12%;
+    transform: translate(-50%, -50%);
+}
+
+.Logo_container img {
+    position: absolute;
+    width: 300px;
+    height: 90px;
+    left: 25%;
+}
+
+.Login-form {
+    position: absolute;
+    width: 500px;
+    height: 570px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFFFFF;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.Inicio {
+    position: absolute;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    width: 278px;
+    height: 44px;
+    left: 50px;
+    top: 112px;
+}
+
+.Datos {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    width: 294px;
+    height: 32px;
+    left: 50px;
+    top: 160px;
+}
+
+.user {
+    position: absolute;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: bold;
+    left: 50px;
+    top: 205px;
+}
+
+.Login-form input[type="text"] {
+    position: absolute;
+    left: 50px;
+    top: 230px;
+    border-radius: 10px;
+    border: 1px solid #A67133;
+    width: 380px;
+    height: 40px;
+    padding: 0 0 0 10px;
+}
+
+.password {
+    position: absolute;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: bold;
+    left: 50px;
+    top: 295px;
+}
+
+.Login-form input[type="password"] {
+    position: absolute;
+    left: 50px;
+    top: 320px;
+    border-radius: 10px;
+    border: 1px solid #A67133;
+    padding: 0 0 0 10px;
+    width: 380px;
+    height: 40px;
+}
+
+.form-check {
+    display: block;
+    min-height: 1.5rem;
+    padding-left: 1.5em;
+}
+
+.form-check input {
+    position: absolute;
+    height: 1em;
+    margin-top: 0.25em;
+    vertical-align: top;
+    background-color: #A67133;
+    top: 385px;
+    left: 60px;
+    cursor: pointer;
+}
+
+.Texto_check {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: smaller;
+    font-weight: bold;
+    color: #656565;
+    position: absolute;
+    left: 80px;
+    top: 384px;
+    line-height: 20px;
+    letter-spacing: -0.04em;
+}
+
+.FPassword {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: smaller;
+    font-weight: bolder;
+    color: #A67133;
+    position: absolute;
+    left: 310px;
+    top: 384px;
+    line-height: 20px;
+    letter-spacing: -0.04em;
+    cursor: pointer;
+}
+
+.Login-form button[type="button"] {
+    position: absolute;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15px;
+    background-color: #A67133;
+    color: #FFFFFF;
+    text-align: center;
+    width: 386px;
+    height: 45px;
+    left: 50px;
+    top: 420px;
+    border: 1px solid #A67133;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.Login-form span[class="pregunta"] {
+    position: absolute;
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 20px;
+    letter-spacing: -0.04em;
+    left: 180px;
+    top: 485px;
+}
+
+.Login-form label[class="registrate"] {
+    position: absolute;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: lighter;
+    color: #A67133;
+    line-height: 20px;
+    letter-spacing: -0.04em;
+    left: 195px;
+    top: 520px;
+    cursor: pointer;
+}
