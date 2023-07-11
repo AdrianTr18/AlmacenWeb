@@ -1,5 +1,5 @@
 <div class="Login">
-    <form class="Login-form">
+    <form class="Login-form" [formGroup]="loginform" (ngSubmit)="Ingresar()">
         <div class="Logo_container">
             <img src="/assets/Logo_backus_panel.png">
         </div>
@@ -7,11 +7,11 @@
         <span class="Datos">Ingresa tus datos</span>
         <div>
             <label class="user">Usuario</label>
-            <input type="text" placeholder="ejemplo@hotmail.com">
+            <input type="text" formControlName="usuario" placeholder="ejemplo@hotmail.com">
           </div>
           <div>
             <label class="password">Contraseña</label>
-            <input type="password" placeholder="contraseña">
+            <input type="password" formControlName="contrasenia" placeholder="contraseña">
           </div>
           <div class="form-check">
             <input type="checkbox">
