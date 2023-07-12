@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Poppins:wght@100&display=swap');
+
+.registro-cuerpo {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #888888 #dddddd;
+}
+
+.container-registro {
+    position: absolute;
+    left: 25%;
+    top: 10%;
+    transform: translate(-50%, -50%);
+}
+
+.container-img {
+    position: fixed;
+    height: 100%;
+}
+
+p {
+    width: 50px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 40px;
+    letter-spacing: -0.04em;
+    font-weight: bold;
+    flex-grow: 1;
+    margin-bottom: 50px;
+}
+
+.inputs {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+}
+
+.inputs input {
+    position: absolute;
+    width: 330px;
+    height: 50px;
+    background-color: transparent;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom: 1px solid #000000;
+    font-weight: 300;
+}
+
+.button-inputs button {
+    position: absolute;
+    width: 160px;
+    height: 50px;
+    top: 280px;
+    left: 16%;
+    border-radius: 10px;
+    color: #FFFFFF;
+    border: 1px solid #000000;
+}
+
+.buttons button {
+    position: absolute;
+    width: 160px;
+    height: 50px;
+    top: 480px;
+    border-radius: 10px;
+    background-color: #A67133;
+    color: #FFFFFF;
+    border: 1px solid #000000;
+}
+
+.tipo {
+    display: flex;
+    flex-direction: column;
+    line-height: 25px;
+}
+
+/* 
+.contenedorselect [name="autores"]{
+    position: absolute;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #CABA80;
+    color: #000000;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    left: 800px;
+    top: 150px;
+    width: 135px;
+    padding: 6px 12px;
+}
+
+.contenedorselect [name="autores-label"]{
+    position: absolute;
+    align-items: center;
+    color: #A67133;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    left: 790px;
+    top: 115px;
+    width: 135px;
+    padding: 6px 12px;
+}
+
+.contenedorselect [name="asesores"]{
+    position: absolute;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #CABA80;
+    color: #000000;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    left: 800px;
+    top: 10px;
+    width: 135px;
+    padding: 6px 12px;
+}
+
+.contenedorselect [name="asesores-label"]{
+    position: absolute;
+    align-items: center;
+    color: #A67133;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    left: 790px;
+    top: 95px;
+    width: 135px;
+    padding: 6px 12px;
+}
+
+
+.contenedorselect [name="editorial"]{
+    position: absolute;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #CABA80;
+    color: #000000;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    left: 800px;
+    top: 240px;
+    width: 135px;
+    padding: 6px 12px;
+}
+
+.contenedorselect [name="editorial-label"]{
+    position: absolute;
+    align-items: center;
+    color: #A67133;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    left: 790px;
+    top: 200px;
+    width: 135px;
+    padding: 6px 12px;
+}
+
+.contenedorselect [name="categoria"]{
+    position: absolute;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #CABA80;
+    color: #000000;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    left: 800px;
+    top: 330px;
+    width: 135px;
+    padding: 6px 12px;
+}
+
+.contenedorselect [name="categoria-label"]{
+    position: absolute;
+    align-items: center;
+    color: #A67133;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    left: 790px;
+    top: 290px;
+    width: 135px;
+    padding: 6px 12px;
+}
+
+.contenedorselect [name="subcategoria"]{
+    position: absolute;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #CABA80;
+    color: #000000;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    left: 800px;
+    top: 330px;
+    width: 135px;
+    padding: 6px 12px;
+}
+
+.contenedorselect [name="subcategoria-label"]{
+    position: absolute;
+    align-items: center;
+    color: #A67133;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    left: 790px;
+    top: 290px;
+    width: 135px;
+    padding: 6px 12px;
+}
+
+.contenedorselect [name="especialidad"]{
+    position: absolute;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #CABA80;
+    color: #000000;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    left: 75%;
+    width: 135px;
+    padding: 6px 12px;
+}
+
+.contenedorselect [name="especialidad-label"]{
+    position: absolute;
+    align-items: center;
+    color: #A67133;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    top: 10px; 
+    left: 75%;
+    width: 135px;
+    padding: 6px 12px;
+} */
+
+
+.Graficos-container-Recepcion {
+    position: absolute;
+    width: 600px;
+    height: 650px;
+    top: 430px;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #0051a0;
+    border-radius: 10px;
+}
+
+.Graficos-container-Administracion {
+    position: absolute;
+    width: 600px;
+    height: 650px;
+    top: 430px;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #0051a0;
+    border-radius: 10px;
+}
+
+.Graficos-container-Supervision {
+    position: absolute;
+    width: 95%;
+    height: 600px;
+    top: 430px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #0051a0;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.CantidadPrestamo {
+    position: absolute;
+    padding: 2%;
+    width: 400px;
+    height: 400px;
+    left: 0;
+    border: 2px solid #0051a0;
+    border-top: 0;
+    border-left: 0;
+    border-bottom-right-radius: 5px;
+}
+
+.CantidadAutores {
+    position: absolute;
+    padding: 2%;
+    width: 400px;
+    height: 400px;
+    left: 399px;
+    border: 2px solid #0051a0;
+    border-top: 0;
+    border-left: 0;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.CantidadRecaudado {
+    position: absolute;
+    padding: 2%;
+    width: 799px;
+    height: 790px;
+    top: 395px;
+    left: 0;
+    border: 2px solid #0051a0;
+    border-top: 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-bottom-right-radius: 5px;
+}
+
+.CantidadVisita {
+    position: sticky;
+    padding: 2%;
+    width: 620px;
+    height: 600px;
+    top: 0;
+    left: 990px;
+}

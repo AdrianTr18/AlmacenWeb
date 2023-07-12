@@ -142,7 +142,7 @@
     cursor: pointer;
 }
 
-.Login-form button[type="button"] {
+.Login-form button[class="button"] {
     position: absolute;
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 15px;
