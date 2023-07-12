@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AlmacenService {
 
-  private apiUrl = 'http://localhost:8080/almacen';
+  private apiUrl = 'http://localhost:8080/warehouses';
 
   constructor(
     private http: HttpClient
@@ -15,6 +15,10 @@ export class AlmacenService {
 
   getAllAlmacenes(): Observable<any> {
     return this.http.get(this.apiUrl);
+  }
+
+  addAlmacen(almacen: any): Observable<any> {
+    return this.http.post(this.apiUrl, almacen);
   }
 
 }

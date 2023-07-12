@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CondicionService {
 
-  private apiUrl = 'http://localhost:8080/detalleEntrada';
+  private apiUrl = 'http://localhost:8080/inputRegisters';
 
   constructor(
     private http: HttpClient

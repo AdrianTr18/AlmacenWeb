@@ -7,13 +7,13 @@ import { Observable } from 'rxjs';
 })
 export class UbicacionService {
 
-  private apiUrl = 'http://localhost:8080/ubicacion';
+  private apiUrl = 'http://localhost:8080/internLocations';
 
   constructor(
     private http: HttpClient
   ) { }
 
-  getAllUbicaciones(): Observable<any> {
+  getAllLocations(): Observable<any> {
     return this.http.get(this.apiUrl);
   }
 

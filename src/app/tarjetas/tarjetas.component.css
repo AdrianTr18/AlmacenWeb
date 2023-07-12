@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Poppins:wght@100&display=swap');
+
+.Tarjeta1{
+    position: absolute;
+    display: block;
+    border-radius: 20px;
+    background-color: #D7FFDF;
+    width: 360px;
+    height: 180px;
+    left: 35%;
+    top: 300px;
+    transform: translate(-50%, -50%);
+}
+
+
+.Tarjeta2{
+    position: absolute;
+    display: block;
+    border-radius: 20px;
+    background-color: #ACE6C0;
+    width: 360px;
+    height: 180px;
+    left: 55%;
+    top: 300px;
+    transform: translate(-50%, -50%);
+}
+
+.Tarjeta3{
+    position: absolute;
+    display: block;
+    border-radius: 20px;
+    background-color: #77B5A6;
+    width: 360px;
+    height: 180px;
+    left: 75%;
+    top: 300px;
+    transform: translate(-50%, -50%);
+}
+
+.Tarjeta4{
+    position: absolute;
+    display: block;
+    border-radius: 20px;
+    background-color: #7897AB;
+    width: 360px;
+    height: 180px;
+    left: 35%;
+    top: 500px;
+    transform: translate(-50%, -50%);
+}
+
+.progress{
+    position: absolute;
+    margin: 0 !important;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+}
+
+img{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+span{
+    position: absolute;
+    top: 35px;
+    left: 80px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: bold;
+}

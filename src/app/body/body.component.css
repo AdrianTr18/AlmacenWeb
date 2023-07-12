@@ -183,8 +183,7 @@ p {
     padding: 6px 0px;
 }
 
-/*
-.contenedorselect [name="subcategoria"]{
+.contenedorselect [name="estado"]{
     position: absolute;
     align-items: center;
     border-radius: 10px;
@@ -198,7 +197,7 @@ p {
     padding: 6px 12px;
 }
 
-.contenedorselect [name="subcategoria-label"]{
+.contenedorselect [name="estado-label"]{
     position: absolute;
     align-items: center;
     color: #A67133;
@@ -210,7 +209,7 @@ p {
     padding: 6px 12px;
 }
 
-.contenedorselect [name="especialidad"]{
+.contenedorselect [name="estado"]{
     position: absolute;
     align-items: center;
     border-radius: 10px;
@@ -219,21 +218,22 @@ p {
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 600;
     left: 75%;
+    top: 45px;
     width: 135px;
     padding: 6px 12px;
 }
 
-.contenedorselect [name="especialidad-label"]{
+.contenedorselect [name="estado-label"]{
     position: absolute;
     align-items: center;
     color: #A67133;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 600;
-    top: 10px; 
     left: 75%;
+    top: 10px;
     width: 135px;
-    padding: 6px 12px;
-} */
+    padding: 6px 0;
+}
 
 
 .Graficos-container-Recepcion {
@@ -317,3 +317,4 @@ p {
     top: 0;
     left: 990px;
 }
+

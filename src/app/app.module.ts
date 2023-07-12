@@ -25,6 +25,7 @@ import { LoteentranteService } from './services/loteentrante/loteentrante.servic
 import { LotesalienteService } from './services/lotesaliente/lotesaliente.service';
 import { EalmacenComponent } from './ealmacen/ealmacen.component';
 import { TarjetasComponent } from './tarjetas/tarjetas.component';
+import { ReportesComponent } from './reportes/reportes.component';
 import { UbicacionService } from './services/ubicacion/ubicacion.service';
 
 const appRoutes: Routes = [
@@ -34,6 +35,8 @@ const appRoutes: Routes = [
   { path: 'lotes-salientes', component: LotessalientesComponent },
   { path: 'registrar-almacen', component: RalmacenComponent },
   { path: 'estado-almacen', component: EalmacenComponent },
+  { path: 'registrar-reporte', component: ReportesComponent },
+  { path: 'tarjetas', component: TarjetasComponent }
 ];
 
 @NgModule({
@@ -49,7 +52,8 @@ const appRoutes: Routes = [
     InicioComponent,
     RalmacenComponent,
     EalmacenComponent,
-    TarjetasComponent
+    TarjetasComponent,
+    ReportesComponent
   ],
   imports: [
     BrowserModule,

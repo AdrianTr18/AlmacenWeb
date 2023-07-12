@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-ealmacen',
-  templateUrl: './ealmacen.component.html',
-  styleUrls: ['./ealmacen.component.css']
+  selector: 'app-reportes',
+  templateUrl: './reportes.component.html',
+  styleUrls: ['./reportes.component.css']
 })
-export class EalmacenComponent {
+export class ReportesComponent {
   //Variables
   nombreEmpresa = "Backus";
   nombre: string = "";
   rol: string = "";
   color: string = "";
-  tipo = "ESTADO DE ALMACÉN";
+  urlImg = "/assets/Fondo_almacen.png";
+  tipo = "REPORTE";
 
   constructor() { }
 

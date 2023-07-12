@@ -75,10 +75,10 @@
   <div class="container-registro">
     <p>
       <span class="registro"> Verificar</span>
-      <span class="tipo" style="color:#CF3636; height: 10px;"> {{tipo}}</span>
+      <span class="tipo" style="color:#CF3636; height: 10px; width: 400px !important;"> {{tipo}}</span>
     </p>
     <div class="contenedor-estados">
-      
+      <app-tarjetas></app-tarjetas>
     </div>
   </div>
 </div>
@@ -105,6 +105,10 @@
         <input class="Zona" type="text" formControlName="zone" placeholder="Zona" style="top: 70px; left: 75%;">
         <input class="Telefono" type="text" formControlName="phone" placeholder="Teléfono"
           style="top: 130px; left: 75%;">
+        <input class="CapacidadMinima" type="number" formControlName="currentCapacity" placeholder="Capacidad habitual"
+          style="top: 190px; left: 75%;">
+        <input class="Capacidad" type="number" formControlName="maxCapacity" placeholder="Capacidad Máxima"
+          style="top: 250px; left: 75%;">
         <div class="buttons" style=" display: flex; justify-content: space-between;">
           <button class="button-agregar" type="submit">Agregar</button>
           <button class="button-modificar" style="left: 185px">Modificar</button>
@@ -116,39 +120,38 @@
   </div>
 </div>
 
-<!--<div *ngIf="tipo === 'REALIZAR SOLICITUD'" class="registro-cuerpo" [style.background-color]="backgroundColor">
-    <div class="container-img">
-      <img alt={{nombreBiblioteca}} src={{urlImage}} width="360" height="90%">
+<div *ngIf="tipo === 'REPORTE'" class="registro-cuerpo" [style.background-color]="backgroundColor">
+  <div class="container-img">
+    <img alt={{nombreEmpresa}} src={{urlImage}} width="360" height="90%">
+  </div>
+  <div class="container-registro">
+    <p>
+      <span class="registro"> Registrar</span>
+      <span class="tipo" style="color:#A67133; height: 10px"> {{tipo}}</span>
+    </p>
+    <div class="inputs">
+      <form class="Autor-form" [formGroup]="reporteform" (ngSubmit)="registrarReporte()">
+        <input class="Nombre" type="text" formControlName="nombre" placeholder="Nombre" style="top: 10px;">
+        <input class="Apellidos" type="text" formControlName="apellidos" placeholder="Apellidos" style="top: 70px;">
+        <input class="Telefono" type="text" formControlName="telefono" placeholder="Teléfono" style="top: 130px;">
+        <input class="DNI" type="text" formControlName="dni" placeholder="DNI" style="top: 190px;">
+        <div class="contenedorselect">
+          <label class="contenedorselect" name="estado-label">ESTADO</label>
+          <select name="estado" id="estado" formControlName="status" style="top: 50px;">
+            <option>Buen estado</option>
+            <option>Mal estado</option>
+          </select>
+        </div>
+        <div class="buttons" style=" display: flex; justify-content: space-between;">
+          <button class="button-agregar" type="submit">Agregar</button>
+          <button class="button-modificar" style="left: 185px">Modificar</button>
+          <button class="button-mostrar" style="left: 365px">Mostrar</button>
+          <button class="button-eliminar" style="left: 545px">Eliminar</button>
+        </div>
+      </form>
     </div>
-    <div class="container-registro">
-      <p>
-        <span class="registro"> Registrar</span>
-        <span class="tipo" style="color:#A67133; height: 10px"> {{tipo}}</span>
-      </p>
-      <div class="inputs">
-        <form class="Autor-form" [formGroup]="autorform" (ngSubmit)="registrarAutor()">
-          <input class="Nombre" type="text" formControlName="nombre" placeholder="Nombre" style="top: 10px;">
-          <input class="Apellidos" type="text" formControlName="apellidos" placeholder="Apellidos" style="top: 70px;">
-          <input class="Telefono" type="text" formControlName="telefono" placeholder="Teléfono" style="top: 130px;">
-          <input class="DNI" type="text" formControlName="dni" placeholder="DNI" style="top: 190px;">
-          <input class="Nacionalidad" type="text" formControlName="nacionalidad" placeholder="Nacionalidad"
-            style="top: 250px;">
-          <div class="contenedorselect">
-            <label class="contenedorselect" name="especialidad-label">ASESORES</label>
-            <select name="especialidad" id="especialidad" formControlName="especialidad" style="top: 50px;">
-              <option [ngValue]="item" *ngFor="let item of especialidad">{{item.descripcion}}</option>
-            </select>
-          </div>
-          <div class="buttons" style=" display: flex; justify-content: space-between;">
-            <button class="button-agregar" type="submit">Agregar</button>
-            <button class="button-modificar" style="left: 185px">Modificar</button>
-            <button class="button-mostrar" style="left: 365px">Mostrar</button>
-            <button class="button-eliminar" style="left: 545px">Eliminar</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div> -->
+  </div>
+</div>
 
 <div *ngIf="tipo === 'LOTE ENTRANTE'" class="registro-cuerpo" [style.background-color]="backgroundColor">
   <div class="container-img">
@@ -166,22 +169,17 @@
           style="top: 70px;">
         <input class="CajasEntrantes" type="number" formControlName="finalQuantityBoxes" placeholder="Cajas entrantes"
           style="top: 130px;">
+        <input class="Condicion" type="text" formControlName="condition" placeholder="Condicion" style="top: 190px;">
         <div class="contenedorselect">
           <label class="contenedorselect" name="conductor-label">CONDUCTOR</label>
           <select name="conductor" id="conductor" formControlName="driver">
-            <option [ngValue]="item" *ngFor="let item of conductor">{{item.nombre}}</option>
+            <option [ngValue]="item" *ngFor="let item of conductor">{{item.name}}</option>
           </select>
         </div>
         <div class="contenedorselect">
           <label class="ubicacionselect" name="ubicacion-label">UBICACIÓN INTERNA</label>
           <select name="ubicacion" id="ubicacion" formControlName="internalLocation">
-            <option [ngValue]="item" *ngFor="let item of Location">{{item.nombre}}</option>
-          </select>
-        </div>
-        <div class="contenedorselect">
-          <label class="condicionselect" name="condicion-label">CONDICIÓN</label>
-          <select name="condicion" id="condicion" formControlName="condition">
-            <option [ngValue]="item" *ngFor="let item of condition">{{item.tipo}}</option>
+            <option [ngValue]="item" *ngFor="let item of Location">{{item.description}}</option>
           </select>
         </div>
         <div class="buttons" style=" display: flex; justify-content: space-between;">
@@ -206,7 +204,7 @@
     </p>
     <div class="inputs">
       <form class="Multa-form" [formGroup]="loteSalienteform" (ngSubmit)="registrarLoteSaliente()">
-        <input class="Fecha" type="text" formControlName="fecha" placeholder="Fecha de Salida" style="top: 10px;">
+        <input class="Fecha" type="datetime" formControlName="fecha" placeholder="Fecha de Salida" style="top: 10px;">
         <input class="PesoInicial" type="number" formControlName="initialWeight" placeholder="Peso Inicial"
           style="top: 70px;">
         <input class="CantidadInicial" type="number" formControlName="initialQuantityBoxes"
@@ -214,13 +212,13 @@
         <div class="contenedorselect">
           <label class="contenedorselect" name="conductor-label">CONDUCTOR</label>
           <select name="conductor" id="conductor" formControlName="driver">
-            <option [ngValue]="item" *ngFor="let item of conductor">{{item.nombre}}</option>
+            <option [ngValue]="item" *ngFor="let item of conductor">{{item.name}}</option>
           </select>
         </div>
         <div class="contenedorselect">
           <label class="almacenselect" name="almacen-label">ALMACÉN DESTINO</label>
           <select name="almacen" id="almacen" formControlName="warehouse">
-            <option [ngValue]="item" *ngFor="let item of almacen">{{item.nombre}}</option>
+            <option [ngValue]="item" *ngFor="let item of almacen">{{item.name}}</option>
           </select>
         </div>
         <div class="buttons" style=" display: flex; justify-content: space-between;">
