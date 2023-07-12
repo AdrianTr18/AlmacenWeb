@@ -4,6 +4,7 @@ import { ChartTypeRegistry } from 'chart.js';
 import { DriverService } from '../services/driver/driver.service';
 import { CondicionService } from '../services/condicion/condicion.service';
 import { UbicacionService } from '../services/ubicacion/ubicacion.service';
+import { AlmacenService } from '../services/almacen/almacen.service';
 
 @Component({
   selector: 'app-body',
@@ -23,11 +24,14 @@ export class BodyComponent implements OnInit {
   //variables para form group
   loteEntranteform!: FormGroup;
   loteSalienteform!: FormGroup;
+  almacenform!: FormGroup;
+
   //Variables para los servicios
-  conductor:any;
-  Location:any;
-  condition:any;
-  finalQuantityBoxes:any;
+  conductor: any;
+  Location: any;
+  condition: any;
+  finalQuantityBoxes: any;
+  almacen: any;
 
   //Variables para el grafico
   tipoGrafico: keyof ChartTypeRegistry = 'bar';
@@ -41,49 +45,89 @@ export class BodyComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private driverService: DriverService,
+    private almacenService: AlmacenService,
     private locationService: UbicacionService,
     private conditionService: CondicionService
-  ){}
+  ) { }
 
   ngOnInit(): void {
-    //Lotes salientes
-      this.loteSalienteform = this.fb.group({
-        fecha: ['', Validators.required],
-        observation: ['', Validators.required],
-        driver: ['', Validators.required],
-        internalLocation: ['', Validators.required],
-        condition: ['', Validators.required],
-        finalQuantityBoxes: ['', Validators.required]
-      });
 
+    //Almacén
+    this.almacenform = this.fb.group({
+      name: ['', Validators.required],
+      description: ['', Validators.required],
+      address: ['', Validators.required],
+      district: ['', Validators.required],
+      province: ['', Validators.required],
+      departament: ['', Validators.required],
+      zone: ['', Validators.required],
+      phone: ['', Validators.required],
+      enabled: ['', Validators.required]
+    });
+
+    //Lotes Entrantes
+    this.loteEntranteform = this.fb.group({
+      fecha: ['', Validators.required],
+      observations: ['', Validators.required],
+      driver: ['', Validators.required],
+      internalLocation: ['', Validators.required],
+      condition: ['', Validators.required],
+      finalQuantityBoxes: ['', Validators.required],
+      enabled: ['', Validators.required]
+    });
+
+    //Lotes Salientes
+    this.loteSalienteform = this.fb.group({
+      fecha: ['', Validators.required],
+      initialWeight: ['', Validators.required],
+      initialQuantityBoxes: ['', Validators.required],
+      driver: ['', Validators.required],
+      warehouse: ['', Validators.required],
+      enabled: ['', Validators.required]
+    });
 
     //Funciones que consumen el servicio
     this.driverService.getDrivers().subscribe(data => {
       this.conductor = data;
     },
-    error => {
-      console.log(error);
-    });
+      error => {
+        console.log(error);
+      });
 
     this.locationService.getAllUbicaciones().subscribe(data => {
       this.Location = data;
     },
-    error => {
-      console.log(error);
-    });
+      error => {
+        console.log(error);
+      });
 
     this.conditionService.getAllCondiciones().subscribe(data => {
       this.condition = data;
     },
-    error => {
-      console.log(error);
-    });
+      error => {
+        console.log(error);
+      });
+
+    this.almacenService.getAllAlmacenes().subscribe(data => {
+      this.almacen = data;
+    },
+      error => {
+        console.log(error);
+      });
 
   }
 
   //Funciones para el CRUD
   registrarLoteEntrante(): void {
-    
+
+  }
+
+  registrarLoteSaliente(): void {
+
+  }
+
+  registrarAlmacen(): void {
+
   }
 
   // Funciones para el grafico

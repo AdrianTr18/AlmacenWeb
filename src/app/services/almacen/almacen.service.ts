@@ -5,15 +5,16 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class CondicionService {
+export class AlmacenService {
 
-  private apiUrl = 'http://localhost:8080/detalleEntrada';
+  private apiUrl = 'http://localhost:8080/almacen';
 
   constructor(
     private http: HttpClient
   ) { }
 
-    getAllCondiciones(): Observable<any> {
-      return this.http.get(this.apiUrl);
-    }
+  getAllAlmacenes(): Observable<any> {
+    return this.http.get(this.apiUrl);
+  }
+
 }

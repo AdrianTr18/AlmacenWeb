@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-lotes-entrantes',
-  templateUrl: './lotentrantes.component.html',
-  styleUrls: ['./lotentrantes.component.css']
+  selector: 'app-ealmacen',
+  templateUrl: './ealmacen.component.html',
+  styleUrls: ['./ealmacen.component.css']
 })
-export class LotesEntrantesComponent {
+export class EalmacenComponent {
   //Variables
   nombreEmpresa = "Backus";
   nombre: string = "";
   rol: string = "";
   color: string = "";
-  urlImg = "/assets/Fondo_cerveza.png";
-  tipo = "LOTE ENTRANTE";
+  tipo = "ESTADO DE ALMACEN";
 
   constructor() { }
 

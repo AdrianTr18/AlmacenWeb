@@ -71,80 +71,52 @@
   </div>
 </div>
 
-<!-- <div *ngIf="tipo === 'ESTADO ALMACEN'" class="registro-cuerpo" [style.background-color]="backgroundColor">
-    <div class="container-img">
-      <img alt={{nombreBiblioteca}} src={{urlImage}} width="360" height="90%">
-    </div>
-    <div class="container-registro">
-      <p>
-        <span class="registro"> Registrar</span>
-        <span class="tipo" style="color:#CF3636; height: 10px;"> {{tipo}}</span>
-      </p>
-      <div class="inputs">
-        <form class="asf" [formGroup]="prestamoform" (ngSubmit)="registrarPrestamo()">
-          <input class="Nombre" type="text" formControlName="nombre" placeholder="Nombre" style="top: 10px;">
-          <input class="Apellidos" type="text" formControlName="apellido" placeholder="Apellidos" style="top: 70px;">
-          <input class="Telefono" type="text" formControlName="telefono" placeholder="Telefono" style="top: 130px;">
-          <input class="DNI" type="text" formControlName="dni" placeholder="DNI" style="top: 190px;">
-          <input class="N°_Prestamo" type="text" formControlName="nprestamo" placeholder="N° de Prestamo" style="top: 10px; left: 75%;">
-          <input class="Titulo" type="text" formControlName="titulo" placeholder="Titulo" style="top: 70px; left: 75%;">
-          <input class="Autor" type="text" formControlName="autor" placeholder="Autor(a)" style="top: 130px; left: 75%;">
-          <input class="Fecha_Prestamo" formControlName="fechaprestamo" type="text" placeholder="Fecha de Prestamo" style="top: 190px; left: 75%;">
-          <input class="Fecha_Devolucion" formControlName="fechadevo" type="text" placeholder="Fecha de Devolución" style="top: 250px; left: 75%;">
-          <div class="button-inputs">
-            <button type="button" class="button-buscar" style="background-color: #CF3636;">Buscar Usuario</button>
-          </div>
-          <div class="buttons" style=" display: flex; justify-content: space-between;">
-            <button class="button" class="button-agregar" type="submit">Agregar</button>
-            <button type="button" class="button-modificar" style="left: 185px">Modificar</button>
-            <button type="button" class="button-mostrar" style="left: 365px">Mostrar</button>
-            <button type="button" class="button-eliminar" style="left: 545px">Eliminar</button>
-          </div>
-        </form>
-      </div>
+<div *ngIf="tipo === 'ESTADO DE ALMACÉN'" class="registro-cuerpo" [style.background-color]="backgroundColor">
+  <div class="container-registro">
+    <p>
+      <span class="registro"> Verificar</span>
+      <span class="tipo" style="color:#CF3636; height: 10px;"> {{tipo}}</span>
+    </p>
+    <div class="contenedor-estados">
+      
     </div>
   </div>
-  
-  <div *ngIf="tipo === 'REGISTRAR ALAMCÉN'" class="registro-cuerpo" [style.background-color]="backgroundColor">
-    <div class="container-img">
-      <img alt={{nombreBiblioteca}} src={{urlImage}} width="360" height="90%">
-    </div>
-    <div class="container-registro">
-      <p>
-        <span class="registro"> Registrar</span>
-        <span class="tipo" style="color:#A67133; height: 10px"> {{tipo}}</span>
-      </p>
-      <div class="inputs">
-        <form class="form-articulos" [formGroup]="articulosform" (ngSubmit)="registrarAticulo()">
-          <input class="Titulo" type="text" formControlName="titulo" placeholder="Titulo" style="top: 10px;">
-          <input class="Disponibilidad" type="text" formControlName="disponibilidad" placeholder="Disponibilidad"
-            style="top: 70px;">
-          <input class="Disciplina" type="text" formControlName="disciplina" placeholder="Disciplina" style="top: 130px;">
-          <input class="ISBN" type="text" formControlName="isbn" placeholder="ISBN" style="top: 190px;">
-          <input class="Fecha de publicación" type="text" formControlName="fechaPublicacion"
-            placeholder="Fecha de publicación" style="top: 250px;">
-          <input class="N° Páginas" type="text" formControlName="numPaginas" placeholder="N° Páginas"
-            style="top: 10px; left: 75%;">
-          <input class="N° Estante" type="text" formControlName="numEstante" placeholder="N° Estante"
-            style="top: 70px; left: 75%;">
-          <input class="Bibliografía" type="text" formControlName="bibliografia" placeholder="Bibliografía"
-            style="top: 130px; left: 75%;">
-          <input class="Volumen" type="text" formControlName="volumen" placeholder="Volúmen"
-            style="top: 190px; left: 75%;">
-          <input class="Numero" type="text" formControlName="numero" placeholder="Número" style="top: 250px; left: 75%;">
-          <input class="Palabras_clave" type="text" formControlName="pclave" placeholder="Palabras clave" style="top: 310px; left: 75%;">
-          <div class="buttons" style=" display: flex; justify-content: space-between;">
-            <button class="button-agregar" type="submit">Agregar</button>
-            <button class="button-modificar" style="left: 185px">Modificar</button>
-            <button class="button-mostrar" style="left: 365px">Mostrar</button>
-            <button class="button-eliminar" style="left: 545px">Eliminar</button>
-          </div>
-        </form>
-      </div>
+</div>
+
+<div *ngIf="tipo === 'ALMACÉN'" class="registro-cuerpo" [style.background-color]="backgroundColor">
+  <div class="container-img">
+    <img alt={{nombreEmpresa}} src={{urlImage}} width="360" height="90%">
+  </div>
+  <div class="container-registro">
+    <p>
+      <span class="registro"> Registrar</span>
+      <span class="tipo" style="color:#A67133; height: 10px; width: 380px !important;"> {{tipo}}</span>
+    </p>
+    <div class="inputs">
+      <form class="form-articulos" [formGroup]="almacenform" (ngSubmit)="registrarAlmacen()">
+        <input class="Nombre" type="text" formControlName="name" placeholder="Nombre" style="top: 10px;">
+        <input class="Descripcion" type="text" formControlName="description" placeholder="Descripción"
+          style="top: 70px;">
+        <input class="Direccion" type="text" formControlName="address" placeholder="Dirección" style="top: 130px;">
+        <input class="Distrito" type="text" formControlName="district" placeholder="Distrito" style="top: 190px;">
+        <input class="Provincia" type="text" formControlName="province" placeholder="Provincia" style="top: 250px;">
+        <input class="Departamento" type="text" formControlName="departament" placeholder="Departamento"
+          style="top: 10px; left: 75%;">
+        <input class="Zona" type="text" formControlName="zone" placeholder="Zona" style="top: 70px; left: 75%;">
+        <input class="Telefono" type="text" formControlName="phone" placeholder="Teléfono"
+          style="top: 130px; left: 75%;">
+        <div class="buttons" style=" display: flex; justify-content: space-between;">
+          <button class="button-agregar" type="submit">Agregar</button>
+          <button class="button-modificar" style="left: 185px">Modificar</button>
+          <button class="button-mostrar" style="left: 365px">Mostrar</button>
+          <button class="button-eliminar" style="left: 545px">Eliminar</button>
+        </div>
+      </form>
     </div>
   </div>
-  
-  <div *ngIf="tipo === 'REALIZAR SOLICITUD'" class="registro-cuerpo" [style.background-color]="backgroundColor">
+</div>
+
+<!--<div *ngIf="tipo === 'REALIZAR SOLICITUD'" class="registro-cuerpo" [style.background-color]="backgroundColor">
     <div class="container-img">
       <img alt={{nombreBiblioteca}} src={{urlImage}} width="360" height="90%">
     </div>
@@ -176,54 +148,24 @@
         </form>
       </div>
     </div>
-  </div>
-  
-  <div *ngIf="tipo === 'LOTE ENTRANTE'" class="registro-cuerpo" [style.background-color]="backgroundColor">
-    <div class="container-img">
-      <img alt={{nombreBiblioteca}} src={{urlImage}} width="360" height="90%">
-    </div>
-    <div class="container-registro">
-      <p>
-        <span class="registro"> Registrar</span>
-        <span class="tipo" style="color:#6D24A6; height: 10px;"> {{tipo}}</span>
-      </p>
-      <div class="inputs">
-        <form class="Multa-form" [formGroup]="multaform" (ngSubmit)="registrarMulta">
-          <input class="Nombre" type="text" formControlName="nombre" placeholder="Nombre" style="top: 10px;">
-          <input class="Apellidos" type="text" formControlName="apellidos" placeholder="Apellidos" style="top: 70px;">
-          <input class="Telefono" type="text" formControlName="telefono" placeholder="Teléfono" style="top: 130px;">
-          <input class="DNI" type="text" formControlName="dni" placeholder="DNI" style="top: 190px;">
-          <input class="Motivo" type="text" formControlName="motivo" placeholder="Motivo" style="top: 10px; left: 75%;">
-          <input class="N° Multa" type="text" formControlName="nmulta" placeholder="Importe"
-            style="top: 70px; left: 75%;">
-          <div class="button-inputs">
-            <button type="button" class="button-buscar" style="background-color: #6D24A6;">Buscar Usuario</button>
-          </div>
-          <div class="buttons" style=" display: flex; justify-content: space-between;">
-            <button class="button-agregar">Agregar</button>
-            <button class="button-modificar" style="left: 185px">Modificar</button>
-            <button class="button-mostrar" style="left: 365px">Mostrar</button>
-            <button class="button-eliminar" style="left: 545px">Eliminar</button>
-          </div>
-        </form>
-      </div>
-    </div>
   </div> -->
 
-<div *ngIf="tipo === 'LOTE SALIENTE'" class="registro-cuerpo" [style.background-color]="backgroundColor">
+<div *ngIf="tipo === 'LOTE ENTRANTE'" class="registro-cuerpo" [style.background-color]="backgroundColor">
   <div class="container-img">
     <img alt={{nombreEmpresa}} src={{urlImage}} width="360" height="90%">
   </div>
   <div class="container-registro">
     <p>
       <span class="registro"> Registrar</span>
-      <span class="tipo" style="color:#A67133; height: 10px"> {{tipo}}</span>
+      <span class="tipo" style="color:#A67133; height: 10px; width: 290px !important;"> {{tipo}}</span>
     </p>
     <div class="inputs">
       <form class="loteEntrante-form" [formGroup]="loteEntranteform" (ngSubmit)="registrarLoteEntrante()">
         <input class="Fecha" type="text" formControlName="fecha" placeholder="Fecha de Entrada" style="top: 10px;">
         <input class="Observaciones" type="text" formControlName="observations" placeholder="Observaciones"
           style="top: 70px;">
+        <input class="CajasEntrantes" type="number" formControlName="finalQuantityBoxes" placeholder="Cajas entrantes"
+          style="top: 130px;">
         <div class="contenedorselect">
           <label class="contenedorselect" name="conductor-label">CONDUCTOR</label>
           <select name="conductor" id="conductor" formControlName="driver">
@@ -242,14 +184,47 @@
             <option [ngValue]="item" *ngFor="let item of condition">{{item.tipo}}</option>
           </select>
         </div>
+        <div class="buttons" style=" display: flex; justify-content: space-between;">
+          <button class="button-agregar" type="submit">Guardar</button>
+          <button class="button-modificar" style="left: 185px">Modificar</button>
+          <button class="button-mostrar" style="left: 365px">Mostrar</button>
+          <button class="button-eliminar" style="left: 545px">Eliminar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="tipo === 'LOTE SALIENTE'" class="registro-cuerpo" [style.background-color]="backgroundColor">
+  <div class="container-img">
+    <img alt={{nombreEmpresa}} src={{urlImage}} width="360" height="90%">
+  </div>
+  <div class="container-registro">
+    <p>
+      <span class="registro"> Registrar</span>
+      <span class="tipo" style="color:#6D24A6; height: 10px; width: 295px !important;"> {{tipo}}</span>
+    </p>
+    <div class="inputs">
+      <form class="Multa-form" [formGroup]="loteSalienteform" (ngSubmit)="registrarLoteSaliente()">
+        <input class="Fecha" type="text" formControlName="fecha" placeholder="Fecha de Salida" style="top: 10px;">
+        <input class="PesoInicial" type="number" formControlName="initialWeight" placeholder="Peso Inicial"
+          style="top: 70px;">
+        <input class="CantidadInicial" type="number" formControlName="initialQuantityBoxes"
+          placeholder="Cantidad de cajas inicial" style="top: 130px;">
         <div class="contenedorselect">
-          <label class="condicionselect" name="condicion-label">CANTIDAD DE CAJAS</label>
-          <select name="cantidadCajas" id="cantidadCajas" formControlName="finalQuantityBoxes">
-            <option [ngValue]="item" *ngFor="let item of finalQuantityBoxes">{{item.tipo}}</option>
+          <label class="contenedorselect" name="conductor-label">CONDUCTOR</label>
+          <select name="conductor" id="conductor" formControlName="driver">
+            <option [ngValue]="item" *ngFor="let item of conductor">{{item.nombre}}</option>
+          </select>
+        </div>
+        <div class="contenedorselect">
+          <label class="almacenselect" name="almacen-label">ALMACÉN DESTINO</label>
+          <select name="almacen" id="almacen" formControlName="warehouse">
+            <option [ngValue]="item" *ngFor="let item of almacen">{{item.nombre}}</option>
           </select>
         </div>
         <div class="buttons" style=" display: flex; justify-content: space-between;">
-          <button class="button-agregar" type="submit">Guardar</button>
+          <button class="button-agregar">Agregar</button>
           <button class="button-modificar" style="left: 185px">Modificar</button>
           <button class="button-mostrar" style="left: 365px">Mostrar</button>
           <button class="button-eliminar" style="left: 545px">Eliminar</button>

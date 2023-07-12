@@ -16,12 +16,24 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { GraficosComponent } from './graficos/graficos.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { RalmacenComponent } from './ralmacen/ralmacen.component';
+import { AlmacenService } from './services/almacen/almacen.service';
+import { CondicionService } from './services/condicion/condicion.service';
+import { DriverService } from './services/driver/driver.service';
+import { LoginService } from './services/login/login.service';
+import { LoteentranteService } from './services/loteentrante/loteentrante.service';
+import { LotesalienteService } from './services/lotesaliente/lotesaliente.service';
+import { EalmacenComponent } from './ealmacen/ealmacen.component';
+import { TarjetasComponent } from './tarjetas/tarjetas.component';
+import { UbicacionService } from './services/ubicacion/ubicacion.service';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'inicio', component: InicioComponent},
   { path: 'lotes-entrantes', component: LotesEntrantesComponent },
   { path: 'lotes-salientes', component: LotessalientesComponent },
+  { path: 'registrar-almacen', component: RalmacenComponent },
+  { path: 'estado-almacen', component: EalmacenComponent },
 ];
 
 @NgModule({
@@ -34,7 +46,10 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     GraficosComponent,
-    InicioComponent
+    InicioComponent,
+    RalmacenComponent,
+    EalmacenComponent,
+    TarjetasComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +61,15 @@ const appRoutes: Routes = [
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    AlmacenService,
+    CondicionService,
+    DriverService,
+    LoginService,
+    LoteentranteService,
+    LotesalienteService,
+    UbicacionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
