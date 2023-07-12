@@ -85,23 +85,27 @@ export class BodyComponent implements OnInit {
 
     //Lotes Entrantes
     this.loteEntranteform = this.fb.group({
-      fecha: ['', Validators.required],
+      date: ['', Validators.required],
       observations: ['', Validators.required],
       driver: ['', Validators.required],
       internalLocation: ['', Validators.required],
       condition: ['', Validators.required],
       finalQuantityBoxes: ['', Validators.required],
-      enabled: ['', Validators.required]
+      finalWeight: ['', Validators.required],
+      inputDetails: [1, Validators.required],
+      user: [1, Validators.required],
+      enabled: [true, Validators.required]
     });
 
     //Lotes Salientes
     this.loteSalienteform = this.fb.group({
-      fecha: ['', Validators.required],
+      date: ['', Validators.required],
       initialWeight: ['', Validators.required],
       initialQuantityBoxes: ['', Validators.required],
       driver: ['', Validators.required],
       warehouse: ['', Validators.required],
-      enabled: ['', Validators.required]
+      user: ['2', Validators.required],
+      enabled: [true, Validators.required]
     });
 
     //Funciones que consumen el servicio

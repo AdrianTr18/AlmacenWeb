@@ -318,3 +318,8 @@ p {
     left: 990px;
 }
 
+app-tarjetas{
+    position: absolute;
+    top: 0;
+    width: 100%;
+}

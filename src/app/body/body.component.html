@@ -10,8 +10,8 @@
       <!--Le damos valor a los inputs creados en la clase del componente con los valores creados en 
             esta clase -->
       <app-graficos [canvaName]=Prestamo.id [tipoGrafico]=tipoGrafico
-        [tituloGrafico]="setTitulo('Cantidad de prestamo por tipo')"
-        [labelsGrafico]="setLabels(['Tesis', 'Libros', 'Articulos', 'Revistas'])"
+        [tituloGrafico]="setTitulo('Cantidad de productos registrados')"
+        [labelsGrafico]="setLabels(['Cervezas', 'Aguas', 'Gaseosas', 'Productos Energizantes'])"
         [leyendaGrafico]="setLeyenda('Cantidad')" [valuesGrafico]="setValues([12, 19, 3, 5])"
         [coloresGrafico]="setColors(['rgba(255, 99, 132, 0.2)','rgba(255, 159, 64, 0.2)','rgba(255, 205, 86, 0.2)','rgba(75, 192, 192, 0.2)'])"
         [borderColorGrafico]="setBorderColor(['rgb(255, 99, 132)', 'rgb(255, 159, 64)', 'rgb(255, 205, 86)', 'rgb(75, 192, 192)'])"></app-graficos>
@@ -21,7 +21,7 @@
   <div *ngIf="rol === 'Administrador'" class="Graficos-container-Administracion">
     <div class="CantidadRecaudado-admin">
       <app-graficos [canvaName]=Recaudado.id [tipoGrafico]="setTipo('doughnut')"
-        [tituloGrafico]="setTitulo('Cantidad de recursos recaudados por mes')"
+        [tituloGrafico]="setTitulo('Cantidad de Productos perdidos por mes')"
         [labelsGrafico]="setLabels(['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio'])"
         [leyendaGrafico]="setLeyenda('Cantidad')" [valuesGrafico]="setValues([120,180,270,105,250,100,85])"
         [coloresGrafico]="setColors(['rgba(255, 99, 132, 0.4)','rgba(255, 159, 64, 0.4)','rgba(255, 205, 86, 0.4)','rgba(75, 192, 192, 0.4)','rgba(54, 162, 235, 0.4)','rgba(153, 102, 255, 0.4)','rgba(201, 203, 207, 0.4)'])"
@@ -34,8 +34,8 @@
       <!--Le damos valor a los inputs creados en la clase del componente con los valores creados en 
             esta clase -->
       <app-graficos [canvaName]=Prestamo.id [tipoGrafico]=tipoGrafico
-        [tituloGrafico]="setTitulo('Cantidad de prestamo por tipo')"
-        [labelsGrafico]="setLabels(['Tesis', 'Libros', 'Articulos', 'Revistas'])"
+        [tituloGrafico]="setTitulo('Cantidad de productos observados')"
+        [labelsGrafico]="setLabels(['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio'])"
         [leyendaGrafico]="setLeyenda('Cantidad')" [valuesGrafico]="setValues([12, 19, 3, 5])"
         [coloresGrafico]="setColors(['rgba(255, 99, 132, 0.2)','rgba(255, 159, 64, 0.2)','rgba(255, 205, 86, 0.2)','rgba(75, 192, 192, 0.2)'])"
         [borderColorGrafico]="setBorderColor(['rgb(255, 99, 132)', 'rgb(255, 159, 64)', 'rgb(255, 205, 86)', 'rgb(75, 192, 192)'])"></app-graficos>
@@ -43,8 +43,8 @@
     </div>
     <div class="CantidadAutores">
       <app-graficos [canvaName]=Autores.id [tipoGrafico]="setTipo('pie')"
-        [tituloGrafico]="setTitulo('Cantidad de artículos disponibles por tipo')"
-        [labelsGrafico]="setLabels(['Tesis', 'Libros', 'Articulos', 'Revistas'])"
+        [tituloGrafico]="setTitulo('Cantidad de espacio disponibles por almacén')"
+        [labelsGrafico]="setLabels(['Almacén A', 'Almacén B', 'Almacén C', 'Almacén D'])"
         [leyendaGrafico]="setLeyenda('Cantidad')" [valuesGrafico]="setValues([12, 19, 3, 5])"
         [coloresGrafico]="setColors(['rgba(255, 99, 132, 0.6)','rgba(255, 159, 64, 0.6)','rgba(255, 205, 86, 0.6)','rgba(75, 192, 192, 0.6)'])"
         [borderColorGrafico]="setBorderColor(['rgb(255, 99, 132)', 'rgb(255, 159, 64)', 'rgb(255, 205, 86)', 'rgb(75, 192, 192)'])"></app-graficos>
@@ -52,16 +52,16 @@
     </div>
     <div class="CantidadRecaudado">
       <app-graficos [canvaName]=Recaudado.id [tipoGrafico]="setTipo('line')"
-        [tituloGrafico]="setTitulo('Cantidad de fondos bibliográficos recaudados')"
-        [labelsGrafico]="setLabels(['Tesis', 'Libros', 'Articulos', 'Revistas'])"
-        [leyendaGrafico]="setLeyenda('Cantidad')" [valuesGrafico]="setValues([12, 19, 3, 5])"
+        [tituloGrafico]="setTitulo('Cantidad de fondos recaudados')"
+        [labelsGrafico]="setLabels(['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio'])"
+        [leyendaGrafico]="setLeyenda('Cantidad')" [valuesGrafico]="setValues([120,180,270,105,250,100,85])"
         [coloresGrafico]="setColors(['rgba(255, 205, 86, 0.6)','rgba(217, 32, 39, 0.6)'])"
         [borderColorGrafico]="setBorderColor(['rgb(255, 205, 86)', 'rgb(217, 32, 39)'])"></app-graficos>
       <canvas #Recaudado id="CantidadRecaudado" width="200" height="200"></canvas>
     </div>
     <div class="CantidadVisita">
       <app-graficos [canvaName]=Visita.id [tipoGrafico]="setTipo('doughnut')"
-        [tituloGrafico]="setTitulo('Cantidad de visitantes por mes')"
+        [tituloGrafico]="setTitulo('Cantidad de productos repartidos por mes')"
         [labelsGrafico]="setLabels(['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio'])"
         [leyendaGrafico]="setLeyenda('Cantidad')" [valuesGrafico]="setValues([120,180,270,105,250,100,85])"
         [coloresGrafico]="setColors(['rgba(255, 99, 132, 0.4)','rgba(255, 159, 64, 0.4)','rgba(255, 205, 86, 0.4)','rgba(75, 192, 192, 0.4)','rgba(54, 162, 235, 0.4)','rgba(153, 102, 255, 0.4)','rgba(201, 203, 207, 0.4)'])"
@@ -164,7 +164,7 @@
     </p>
     <div class="inputs">
       <form class="loteEntrante-form" [formGroup]="loteEntranteform" (ngSubmit)="registrarLoteEntrante()">
-        <input class="Fecha" type="text" formControlName="fecha" placeholder="Fecha de Entrada" style="top: 10px;">
+        <input class="Fecha" type="text" formControlName="date" placeholder="Fecha de Entrada" style="top: 10px;">
         <input class="Observaciones" type="text" formControlName="observations" placeholder="Observaciones"
           style="top: 70px;">
         <input class="CajasEntrantes" type="number" formControlName="finalQuantityBoxes" placeholder="Cajas entrantes"
@@ -204,7 +204,7 @@
     </p>
     <div class="inputs">
       <form class="Multa-form" [formGroup]="loteSalienteform" (ngSubmit)="registrarLoteSaliente()">
-        <input class="Fecha" type="datetime" formControlName="fecha" placeholder="Fecha de Salida" style="top: 10px;">
+        <input class="Fecha" type="datetime" formControlName="date" placeholder="Fecha de Salida" style="top: 10px;">
         <input class="PesoInicial" type="number" formControlName="initialWeight" placeholder="Peso Inicial"
           style="top: 70px;">
         <input class="CantidadInicial" type="number" formControlName="initialQuantityBoxes"

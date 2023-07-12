@@ -7,7 +7,7 @@
     background-color: #D7FFDF;
     width: 360px;
     height: 180px;
-    left: 35%;
+    left: 75px;
     top: 300px;
     transform: translate(-50%, -50%);
 }
@@ -20,7 +20,7 @@
     background-color: #ACE6C0;
     width: 360px;
     height: 180px;
-    left: 55%;
+    left: 460px;
     top: 300px;
     transform: translate(-50%, -50%);
 }
@@ -32,7 +32,7 @@
     background-color: #77B5A6;
     width: 360px;
     height: 180px;
-    left: 75%;
+    left: 840px;
     top: 300px;
     transform: translate(-50%, -50%);
 }
@@ -44,7 +44,7 @@
     background-color: #7897AB;
     width: 360px;
     height: 180px;
-    left: 35%;
+    left: 75px;
     top: 500px;
     transform: translate(-50%, -50%);
 }
