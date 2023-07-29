@@ -87,7 +87,7 @@ export class BodyComponent implements OnInit {
       enabled: [true, Validators.required]
     });
 
-    //Lotes Entrantes
+    //Lotes Entrantes FUNCIONAL
     this.loteEntranteform = this.fb.group({
       date: ['', Validators.required],
       observations: ['', Validators.required],
@@ -95,17 +95,16 @@ export class BodyComponent implements OnInit {
       user: ['', Validators.required],
       enabled: [true, Validators.required],
       // Le damos los valores generados en la función al JSON
-      inputDetails: this.fb.array([])
+      inputDetails: this.fb.array([this.generarInputDetailEntrante()])
     });
 
     //Lotes Salientes
     this.loteSalienteform = this.fb.group({
       date: ['', Validators.required],
-      initialWeight: ['', Validators.required],
-      initialQuantityBoxes: ['', Validators.required],
       driver: ['', Validators.required],
+      user: ['', Validators.required],
       warehouse: ['', Validators.required],
-      user: ['2', Validators.required],
+      outputDetails: this.fb.array([this.generarOutputDetailSaliente()]),
       enabled: [true, Validators.required]
     });
 
@@ -153,27 +152,50 @@ export class BodyComponent implements OnInit {
       });
 
   }
+  //Generamos inputDetail en base a los datos introducidos por el usuario
+  generarInputDetailEntrante() {
+    return this.loteEntranteform = this.fb.group({
+      internLocation: ['', Validators.required],
+      condition: ['', Validators.required],
+      finalWeight: [null, Validators.required],
+      finalQuantityBoxes: [null, Validators.required],
+      lot: ['', Validators.required]
+    });
+  }
   // Obtenemos los datos del ArrayGroup 
-  get inputDetails() {
-    return this.loteEntranteform.get('inputDetails') as FormArray;
+    get inputDetailsEntrante() {
+      return this.loteEntranteform.get('inputDetails') as FormArray;
+    }
+
+  //Generamos el outputDetail en base a los datos introducidos por el usuario
+  generarOutputDetailSaliente(){
+    return this.loteSalienteform = this.fb.group({
+      initialWeight: [null, Validators.required],
+      initialQuantityBoxes: [null, Validators.required],
+      lot: ['', Validators.required]
+    });
+  }
+  //Obtenemos los datos del ArrayGroup
+  get outputDetailSaliente(){
+    return this.loteSalienteform.get('outputDetails') as FormArray;
   }
 
   //Funciones para el CRUD
   registrarLoteEntrante(): void {
     this.loteEntranteService.addRegister(this.loteEntranteform.value).subscribe(data => {
-      alert("Almacen registrado correctamente");
+      alert("Lote registrado correctamente");
       this.loteEntranteform.reset();
       return this.loteEntrante = data;
     },
       error => {
-        alert("Error al registrar el almacén");
+        alert("Error al registrar el lote");
         console.log(error);
       });
   }
 
   registrarLoteSaliente(): void {
     this.loteSalienteService.addRegister(this.loteSalienteform.value).subscribe(data => {
-      alert("Reporte registrado correctamente");
+      alert("Lote saliente registrado correctamente");
       this.reporteform.reset();
     }, err => {
       console.log(err);
