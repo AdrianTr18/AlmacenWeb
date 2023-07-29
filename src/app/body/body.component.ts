@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ChartTypeRegistry } from 'chart.js';
 import { DriverService } from '../services/driver/driver.service';
 import { CondicionService } from '../services/condicion/condicion.service';
@@ -7,6 +7,7 @@ import { AlmacenService } from '../services/almacen/almacen.service';
 import { UbicacionService } from '../services/ubicacion/ubicacion.service';
 import { LoteentranteService } from '../services/loteentrante/loteentrante.service';
 import { LotesalienteService } from '../services/lotesaliente/lotesaliente.service';
+import { UsuarioService } from '../services/usuario/usuario.service';
 
 @Component({
   selector: 'app-body',
@@ -37,6 +38,8 @@ export class BodyComponent implements OnInit {
   almacen: any;
   reporte: any;
   loteEntrante: any;
+  User: any;
+  LotCode: any;
 
   //Variables para el grafico
   tipoGrafico: keyof ChartTypeRegistry = 'bar';
@@ -55,6 +58,7 @@ export class BodyComponent implements OnInit {
     private ubicacionService: UbicacionService,
     private loteEntranteService: LoteentranteService,
     private loteSalienteService: LotesalienteService,
+    private userService: UsuarioService
   ) { }
 
   ngOnInit(): void {
@@ -68,7 +72,7 @@ export class BodyComponent implements OnInit {
       status: ['', Validators.required]
     });
 
-    //Almacén
+    //Almacén FUNCIONAL
     this.almacenform = this.fb.group({
       name: ['', Validators.required],
       description: ['', Validators.required],
@@ -88,13 +92,10 @@ export class BodyComponent implements OnInit {
       date: ['', Validators.required],
       observations: ['', Validators.required],
       driver: ['', Validators.required],
-      internalLocation: ['', Validators.required],
-      condition: ['', Validators.required],
-      finalQuantityBoxes: ['', Validators.required],
-      finalWeight: ['', Validators.required],
-      inputDetails: [1, Validators.required],
-      user: [1, Validators.required],
-      enabled: [true, Validators.required]
+      user: ['', Validators.required],
+      enabled: [true, Validators.required],
+      // Le damos los valores generados en la función al JSON
+      inputDetails: this.fb.array([])
     });
 
     //Lotes Salientes
@@ -136,6 +137,25 @@ export class BodyComponent implements OnInit {
       error => {
         console.log(error);
       });
+
+    this.userService.getAllUsuarios().subscribe(data => {
+      this.User = data;
+    },
+      error => {
+        console.log(error);
+      });
+
+    this.loteEntranteService.getLotes().subscribe(data => {
+      this.LotCode = data;
+    },
+      error => {
+        console.log(error);
+      });
+
+  }
+  // Obtenemos los datos del ArrayGroup 
+  get inputDetails() {
+    return this.loteEntranteform.get('inputDetails') as FormArray;
   }
 
   //Funciones para el CRUD
@@ -146,6 +166,7 @@ export class BodyComponent implements OnInit {
       return this.loteEntrante = data;
     },
       error => {
+        alert("Error al registrar el almacén");
         console.log(error);
       });
   }

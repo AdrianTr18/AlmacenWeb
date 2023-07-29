@@ -27,6 +27,7 @@ import { EalmacenComponent } from './ealmacen/ealmacen.component';
 import { TarjetasComponent } from './tarjetas/tarjetas.component';
 import { ReportesComponent } from './reportes/reportes.component';
 import { UbicacionService } from './services/ubicacion/ubicacion.service';
+import { UsuarioService } from './services/usuario/usuario.service';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -72,7 +73,8 @@ const appRoutes: Routes = [
     LoginService,
     LoteentranteService,
     LotesalienteService,
-    UbicacionService
+    UbicacionService,
+    UsuarioService
   ],
   bootstrap: [AppComponent]
 })

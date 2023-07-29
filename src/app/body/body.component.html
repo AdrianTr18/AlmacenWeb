@@ -164,22 +164,40 @@
     </p>
     <div class="inputs">
       <form class="loteEntrante-form" [formGroup]="loteEntranteform" (ngSubmit)="registrarLoteEntrante()">
-        <input class="Fecha" type="text" formControlName="date" placeholder="Fecha de Entrada" style="top: 10px;">
+        <input class="Fecha" type="datetime-local" formControlName="date" style="top: 10px;">
         <input class="Observaciones" type="text" formControlName="observations" placeholder="Observaciones"
           style="top: 70px;">
-        <input class="CajasEntrantes" type="number" formControlName="finalQuantityBoxes" placeholder="Cajas entrantes"
-          style="top: 130px;">
-        <input class="Condicion" type="text" formControlName="condition" placeholder="Condicion" style="top: 190px;">
+        <div formArrayName="inputDetails">
+          <div *ngFor="let detail of inputDetails.controls; let i = index">
+            <input class="CajasEntrantes" type="number" formControlName="finalQuantityBoxes" placeholder="Cajas entrantes"
+            style="top: 130px;"> <!-- FINAL QUANTITY BOXES -->
+          <input class="Condicion" type="text" formControlName="condition" placeholder="Condicion" style="top: 190px;">
+          <!-- CONDITION -->
+          </div>
+        </div>
         <div class="contenedorselect">
           <label class="contenedorselect" name="conductor-label">CONDUCTOR</label>
           <select name="conductor" id="conductor" formControlName="driver">
             <option [ngValue]="item" *ngFor="let item of conductor">{{item.name}}</option>
           </select>
         </div>
+        <div class="contenedorselect" formArrayName="inputDetails">
+          <div *ngFor="let detail of inputDetails.controls; let i = index">
+            <label class="ubicacionselect" name="ubicacion-label">UBICACIÓN INTERNA</label>
+            <select name="ubicacion" id="ubicacion" formControlName="internLocation">
+              <option [ngValue]="item" *ngFor="let item of Location">{{item.description}}</option>
+            </select>
+
+            <label class="loteselect" name="lote-label">LOTE</label>
+            <select name="lote" id="lote" formControlName="lot">
+              <option [ngValue]="item" *ngFor="let item of LotCode">{{item.code}}</option>
+            </select>
+          </div>
+        </div>
         <div class="contenedorselect">
-          <label class="ubicacionselect" name="ubicacion-label">UBICACIÓN INTERNA</label>
-          <select name="ubicacion" id="ubicacion" formControlName="internalLocation">
-            <option [ngValue]="item" *ngFor="let item of Location">{{item.description}}</option>
+          <label class="usuarioselect" name="usuario-label">USUARIO</label>
+          <select name="usuario" id="user" formControlName="user">
+            <option [ngValue]="item" *ngFor="let item of User">{{item.name}}</option>
           </select>
         </div>
         <div class="buttons" style=" display: flex; justify-content: space-between;">

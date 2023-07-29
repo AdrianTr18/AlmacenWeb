@@ -235,6 +235,57 @@ p {
     padding: 6px 0;
 }
 
+.contenedorselect [name="usuario"]{
+    position: absolute;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #CABA80;
+    color: #000000;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    left: 75%;
+    top: 205px;
+    width: 135px;
+    padding: 6px 12px;
+}
+
+.contenedorselect [name="usuario-label"]{
+    position: absolute;
+    align-items: center;
+    color: #A67133;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    left: 75%;
+    top: 170px;
+    width: 135px;
+    padding: 6px 0;
+}
+
+.contenedorselect [name="lote"]{
+    position: absolute;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #CABA80;
+    color: #000000;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    left: 75%;
+    top: 285px;
+    width: 135px;
+    padding: 6px 12px;
+}
+
+.contenedorselect [name="lote-label"]{
+    position: absolute;
+    align-items: center;
+    color: #A67133;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    left: 75%;
+    top: 250px;
+    width: 135px;
+    padding: 6px 0;
+}
 
 .Graficos-container-Recepcion {
     position: absolute;
