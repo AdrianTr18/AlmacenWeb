@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Warerhouse } from 'src/app/model/warerhouse';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,8 @@ export class AlmacenService {
     private http: HttpClient
   ) { }
 
-  getAllAlmacenes(): Observable<any> {
-    return this.http.get(this.apiUrl);
+  getAllAlmacenes(): Observable<Warerhouse[]> {
+    return this.http.get<Warerhouse[]>(this.apiUrl);
   }
 
   addAlmacen(almacen: any): Observable<any> {

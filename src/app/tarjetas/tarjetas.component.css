@@ -1,6 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Poppins:wght@100&display=swap');
 
-.Tarjeta1{
+.shadow {
+    box-shadow: 0 0 15px rgb(53 64 78 / 20%) !important;
+}
+.rounded {
+    border-radius: 5px !important;
+}
+
+.bg-light {
+    position: relative !important;
+    background-color: #f7f8fa !important;
+}
+
+.badge {
+    padding: 5px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+}
+
+.bg-primary, .badge-primary{
+    background-color: #0051a0 !important;
+}
+
+.progress-bar{
+    background-color: #0051a0 !important;
+}
+
+a {
+text-decoration:none;    
+}
+
+/* .Tarjeta1{
     position: absolute;
     display: block;
     border-radius: 20px;
@@ -69,4 +99,7 @@ span{
     left: 80px;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: bold;
-}
+} */
+
+
+

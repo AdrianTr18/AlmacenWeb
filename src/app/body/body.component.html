@@ -71,11 +71,11 @@
   </div>
 </div>
 
-<div *ngIf="tipo === 'ESTADO DE ALMACÉN'" class="registro-cuerpo" [style.background-color]="backgroundColor">
-  <div class="container-registro">
-    <p>
+<div *ngIf="tipo === 'ESTADO DE ALMACÉN'" class="registro-cuerpo-almacen" [style.background-color]="backgroundColor">
+  <div class="container-registro-almacen">
+    <p style="width: auto; margin: 0 !important;">
       <span class="registro"> Verificar</span>
-      <span class="tipo" style="color:#CF3636; height: 10px; width: 400px !important;"> {{tipo}}</span>
+      <span class="tipo-almacen" style="color:#CF3636; height: 10px;"> estado de almacén</span>
     </p>
     <div class="contenedor-estados">
       <app-tarjetas></app-tarjetas>
@@ -172,8 +172,8 @@
             <input class="CajasEntrantes" type="number" formControlName="finalQuantityBoxes"
               placeholder="Cajas entrantes" style="top: 130px;"> <!-- FINAL QUANTITY BOXES -->
             <input class="Condicion" type="text" formControlName="condition" placeholder="Condicion"
-              style="top: 190px;">
-            <!-- CONDITION -->
+            style="top: 190px;"> <!-- CONDITION -->
+            <input class="PesoFinal" type="number" formControlName="finalWeight" placeholder="Peso Final" style="top: 250px;"> <!-- FINAL WEIGHT -->
           </div>
         </div>
         <div class="contenedorselect">
@@ -198,11 +198,11 @@
         <div class="contenedorselect">
           <label class="usuarioselect" name="usuario-label">USUARIO</label>
           <select name="usuario" id="user" formControlName="user">
-            <option *ngFor="let item of User">{{item.name}}</option>
+            <option [ngValue]="item" *ngFor="let item of User">{{item.name}}</option>
           </select>
         </div>
         <div class="buttons" style=" display: flex; justify-content: space-between;">
-          <button class="button-agregar" type="submit">Guardar</button>
+          <button class="button-agregar" type="submit">Registrar</button>
           <button class="button-modificar" style="left: 185px">Modificar</button>
           <button class="button-mostrar" style="left: 365px">Mostrar</button>
           <button class="button-eliminar" style="left: 545px">Eliminar</button>
@@ -226,7 +226,7 @@
         <input class="Fecha" type="datetime-local" formControlName="date" placeholder="Fecha de Salida"
           style="top: 10px;">
         <div formArrayName="outputDetails">
-          <div *ngFor="let detail of outputDetailSaliente.controls; let i = index" [formGroupName]="i">
+          <div  *ngFor="let detail of outputDetailSaliente.controls; let i = index" [formGroupName]="i">
             <input class="PesoInicial" type="number" formControlName="initialWeight" placeholder="Peso Inicial"
               style="top: 70px;">
             <input class="CantidadInicial" type="number" formControlName="initialQuantityBoxes"
@@ -256,14 +256,14 @@
         <div class="contenedorselect">
           <label class="usuarioselect" name="usuario-label">USUARIO</label>
           <select name="usuario" id="user" formControlName="user">
-            <option *ngFor="let item of User">{{item.name}}</option>
+            <option [ngValue]="item" *ngFor="let item of User">{{item.name}}</option>
           </select>
         </div>
         <div class="buttons" style=" display: flex; justify-content: space-between;">
-          <button class="button-agregar">Agregar</button>
-          <button class="button-modificar" style="left: 185px">Modificar</button>
-          <button class="button-mostrar" style="left: 365px">Mostrar</button>
-          <button class="button-eliminar" style="left: 545px">Eliminar</button>
+          <button class="button-agregar" type="submit">Registrar</button>
+          <button class="button-modificar" type="submit" style="left: 185px">Modificar</button>
+          <button class="button-mostrar" type="submit" style="left: 365px">Mostrar</button>
+          <button class="button-eliminar" type="submit" style="left: 545px">Eliminar</button>
         </div>
       </form>
     </div>

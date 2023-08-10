@@ -1,0 +1,14 @@
+.contenedor {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Definir las filas del grid */
+    grid-template-columns: 1fr; /* Definir las columnas del grid */
+    gap: 20px; /* Espacio entre elementos */
+}
+
+.contenedor app-body{
+    position: relative !important;
+}
+
+.contenedor app-footer {
+    position: relative !important;
+}

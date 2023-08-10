@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -27,6 +27,11 @@ export class LoginComponent implements OnInit {
 
   Ingresar(){
     this.router.navigate(['/inicio']);
+  }
+
+  login(form: NgForm) {
+    const usuario = form.value.usuario; 
+    const contrasenia = form.value.contrasenia;
   }
 
 }

@@ -38,6 +38,7 @@ export class BodyComponent implements OnInit {
   almacen: any;
   reporte: any;
   loteEntrante: any;
+  loteSaliente: any;
   User: any;
   LotCode: any;
 
@@ -98,7 +99,7 @@ export class BodyComponent implements OnInit {
       inputDetails: this.fb.array([this.generarInputDetailEntrante()])
     });
 
-    //Lotes Salientes
+    //Lotes Salientes FUNCIONAL
     this.loteSalienteform = this.fb.group({
       date: ['', Validators.required],
       driver: ['', Validators.required],
@@ -197,8 +198,10 @@ export class BodyComponent implements OnInit {
     this.loteSalienteService.addRegister(this.loteSalienteform.value).subscribe(data => {
       alert("Lote saliente registrado correctamente");
       this.reporteform.reset();
-    }, err => {
-      console.log(err);
+      return this.loteSaliente = data;
+    }, error => {
+      alert("Error al registrar el lote");
+      console.log(error);
     });
   }
 
@@ -207,8 +210,9 @@ export class BodyComponent implements OnInit {
       alert("Almacen registrado correctamente");
       this.almacenform.reset();
       return this.almacen = data;
-    }, err => {
-      console.log(err);
+    }, error => {
+      alert("Error al registrar el almacen")
+      console.log(error);
     });
   }
 

@@ -3,7 +3,7 @@
 .registro-cuerpo {
     position: fixed;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     overflow: auto;
     scrollbar-width: thin;
     scrollbar-color: #888888 #dddddd;
@@ -14,6 +14,16 @@
     left: 25%;
     top: 10%;
     transform: translate(-50%, -50%);
+}
+
+.container-registro-almacen {
+    /* position: relative; */
+    margin: 0 50px 50px;
+}
+
+.registro-cuerpo-almacen {
+    width: 100%;
+    max-width: 5000px;
 }
 
 .container-img {
@@ -370,7 +380,6 @@ p {
 }
 
 app-tarjetas{
-    position: absolute;
-    top: 0;
-    width: 100%;
+    position: relative;
+    flex: 1;
 }
